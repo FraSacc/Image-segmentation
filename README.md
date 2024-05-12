@@ -1,2 +1,2 @@
 # Image-segmentation
-Separates leaf area of a plant from background and calculates its value.
+Separates the leaf area of a plant from the image background and calculates its value in $cm^2$. 
