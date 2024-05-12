@@ -9,7 +9,7 @@ import os
 import cv2
 import numpy as np
 
-def scale_bar_finder(img):
+def scale_bar_finder(img,value):
     #Find color black
     mask_black = cv2.inRange(hsv,(0,254,0),(255,255,2))
     
@@ -29,7 +29,7 @@ def scale_bar_finder(img):
     
     #Calculate cm2/pixel
     d=np.sqrt((scale_bar[1]-scale_bar[0])**2+(scale_bar[3]-scale_bar[2])**2) #d=sqrt((x1-x0)**2+(y1-y0)**2)
-    scale=(7/d)**2
+    scale=(value/d)**2
     return scale_bar,scale
 
 def contour_finder(img,color_space):
